@@ -46,7 +46,18 @@ const Education: React.FC = () => {
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                     <div>
                       <h3 className="text-2xl font-bold text-gray-900 mb-2">{edu.degree}</h3>
-                      <p className="text-xl text-blue-600 font-semibold">{edu.institution}</p>
+                      {edu.url ? (
+                        <a 
+                          href={edu.url} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="text-xl text-blue-600 font-semibold hover:underline"
+                        >
+                          {edu.institution}
+                        </a>
+                      ) : (
+                        <p className="text-xl text-blue-600 font-semibold">{edu.institution}</p>
+                      )}
                     </div>
                     
                     <div className="flex flex-col items-end gap-2 mt-4 md:mt-0">

@@ -25,6 +25,7 @@ export interface Education {
   duration: string;
   gpa?: string;
   achievements: string[];
+  url?: string;
 }
 
 export interface ChatMessage {

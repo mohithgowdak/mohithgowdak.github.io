@@ -140,13 +140,14 @@ export const education: Education[] = [
     id: "1",
     degree: "Bachelor of Engineering in Computer Science and Engineering",
     institution: "Sri Jayachamarajendra College of Engineering",
-    duration: "2020 – 2024",
+    duration: "2021 – 2025",
     gpa: "9.0/10.0",
     achievements: [
       "Completed specialized coursework in AI, Networks, and Cybersecurity",
       "Final year project on Application of Text Based Transformer Models for image classification",
       "Active participant in coding contests and project exhibitions"
-    ]
+    ],
+    url: "https://www.jssstuniv.in/#/"
   }
   
 ];
@@ -211,7 +212,11 @@ export const skills = {
     "OpenCV",
     "Pandas",
     "NumPy",
-    "Scikit-learn"
+    "Scikit-learn",
+    "MCP Server",
+    "Prompt Tuning and Engineering",
+    "LLMs (Large Language Models)",
+    "Generative AI"
   ],
   "Tools & Platforms": [
     "Git",
