@@ -74,7 +74,7 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onClose }) => {
     
     // Contact information
     if (message.includes('contact') || message.includes('email') || message.includes('phone')) {
-      return `You can reach Mohith  at:\n• Email: ${personalInfo.email}\n• Phone: ${personalInfo.phone}\n• Location: ${personalInfo.location}\n• LinkedIn: ${personalInfo.linkedin}\n• GitHub: ${personalInfo.github}\n• Medium: ${personalInfo.medium}`;
+      return `You can reach Mohith  at:\n• Email: ${personalInfo.email}\n•  Location: ${personalInfo.location}\n• LinkedIn: ${personalInfo.linkedin}\n• GitHub: ${personalInfo.github}\n• Medium: ${personalInfo.medium}`;
     }
     
     // Background/About

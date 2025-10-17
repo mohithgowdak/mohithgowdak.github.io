@@ -89,7 +89,7 @@ export const projects: Project[] = [
 export const experience: Experience[] = [
   {
     id: "1",
-    title: "iXp Intern | Associate Solution Support Engineer",
+    title: "Cloud Support Engineer - SAP S/4 HANA Public Cloud",
     company: "SAP Labs India Pvt Ltd",
     duration: "Jan 2025 – Present",
     description: [
@@ -103,7 +103,7 @@ export const experience: Experience[] = [
  , 
   {
     id: "2",
-    title: "Apprenticeship | Backend Developer",
+    title: "Apprenticeship - IDM Application Development",
     company: "OpenText Corporation India Pvt Ltd",
     duration: "Oct 2024 – Dec 2024",
   
@@ -144,7 +144,7 @@ export const education: Education[] = [
     gpa: "9.0/10.0",
     achievements: [
       "Completed specialized coursework in AI, Networks, and Cybersecurity",
-      "Final year project on Facial Expression Recognition using Optical Flow and Deep Learning",
+      "Final year project on Application of Text Based Transformer Models for image classification",
       "Active participant in coding contests and project exhibitions"
     ]
   }
@@ -154,12 +154,12 @@ export const education: Education[] = [
 export const blogPosts: BlogPost[] = [
   {
     id: "1",
-    title: "Swap Skills, Not Cash: The Future of Learning & Collaboration 🤝",
-    excerpt: "Exploring Project Idea: Swap Skills, Not Cash — a skill exchange platform where talent meets opportunity without spending a single rupee. ",
-    publishedDate: "2025-01-22",
-    readTime: "4 min read",
-    tags: ["Startup", "idea", "Project", "Technology"],
-    url: "https://medium.com/@wintersoldie/swap-skills-not-cash-the-future-of-learning-collaboration-dd4987a34413",
+    title: "From Bananas to Bots: How ChatGPT, Gemini, and Image Generators Really Work",
+    excerpt: "This is the first part of our journey into AI/ML Learning, where we'll pull back the curtain on these incredible technologies, starting with how your whimsical banana prompt or philosophical pirate query actually goes from your brain to a breathtaking (or hilarious) result.",
+    publishedDate: "2025-09-21",
+    readTime: "10 min read",
+    tags: ["AI", "LLM", "Generative AI"],
+    url: "https://www.linkedin.com/pulse/from-bananas-bots-how-chatgpt-gemini-image-generators-mohith-gowda-k-iw3zc/?trackingId=r278xq5IRfyTbM%2BJk26M5g%3D%3D",
     imageUrl: "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800",
     featured: true
   },
@@ -172,18 +172,18 @@ export const blogPosts: BlogPost[] = [
     tags: ["Python", "JavaScript", "Agentic AI", "Prototype"],
     url: "https://medium.com/@wintersoldie/building-ai-agent-explorer-a-student-project-to-help-you-discover-the-right-ai-tools-smarter-a04fca60a494",
     imageUrl: "https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=800",
-    featured: true
+    featured: false
   },
   {
     id: "3",
-    title: "Fresh Startup Ideas for 2025 That Could Change the Game",
-    excerpt: "some exciting and fresh startup ideas to inspire you and help you tap into unique market opportunities.",
-    publishedDate: "2025-01-18",
+    title: "Gen Z, AI & The Prompt Revolution: Why Prompt Engineering is India’s Superpower",
+    excerpt: "Imagine a world where a single sentence can launch the next billion-dollar startup, automate entire workflows, or rewrite the careers of a whole generation. That world is already here—powered by prompt engineering, the skill rapidly redefining who leads in the AI-first era. For India’s ambitious professionals, students, and tech visionaries, knowing how to “talk to AI” isn’t just futuristic, it’s the passport to relevance and success in the next decade.",
+    publishedDate: "2025-07-20",
     readTime: "4 min read",
-    tags: ["Career", "Startup", "Software Engineering", "Student Life"],
-    url: "https://medium.com/@wintersoldie/fresh-startup-ideas-for-2025-that-could-change-the-game-4bdab11a9c6f",
+    tags: ["Career", "Prompt Engineering", "Software Engineering", "Student Life"],
+    url: "https://www.linkedin.com/pulse/gen-z-ai-prompt-revolution-why-engineering-indias-mohith-gowda-k-4h38c/?trackingId=r278xq5IRfyTbM%2BJk26M5g%3D%3D",
     imageUrl: "https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?auto=compress&cs=tinysrgb&w=800",
-    featured: false
+    featured: true
   },
   {
     id: "4",
