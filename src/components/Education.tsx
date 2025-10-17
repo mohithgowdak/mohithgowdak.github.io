@@ -11,7 +11,7 @@ const Education: React.FC = () => {
   });
 
   return (
-    <section id="education" className="py-20 bg-white">
+    <section id="education" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -20,10 +20,10 @@ const Education: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Education
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             Academic foundation and achievements that shaped my technical expertise
           </p>
         </motion.div>
@@ -35,7 +35,7 @@ const Education: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 mb-8"
+              className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 mb-8"
             >
               <div className="flex items-start gap-6">
                 <div className="bg-blue-600 p-4 rounded-xl">
@@ -45,7 +45,7 @@ const Education: React.FC = () => {
                 <div className="flex-1">
                   <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                     <div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">{edu.degree}</h3>
+                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{edu.degree}</h3>
                       {edu.url ? (
                         <a 
                           href={edu.url} 
@@ -61,7 +61,7 @@ const Education: React.FC = () => {
                     </div>
                     
                     <div className="flex flex-col items-end gap-2 mt-4 md:mt-0">
-                      <div className="flex items-center gap-2 text-gray-600">
+                      <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
                         <Calendar size={16} />
                         <span className="font-medium">{edu.duration}</span>
                       </div>
@@ -75,7 +75,7 @@ const Education: React.FC = () => {
                   
                   <div className="space-y-4">
                     <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                      <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
                         <Award className="text-yellow-500" size={20} />
                         Achievements & Honors
                       </h4>
@@ -83,10 +83,10 @@ const Education: React.FC = () => {
                         {edu.achievements.map((achievement, i) => (
                           <div
                             key={i}
-                            className="bg-white p-3 rounded-lg shadow-sm border border-gray-200 flex items-center gap-3"
+                            className="bg-white dark:bg-gray-700 p-3 rounded-lg shadow-sm border border-gray-200 dark:border-gray-600 flex items-center gap-3"
                           >
                             <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                            <span className="text-gray-700 font-medium">{achievement}</span>
+                            <span className="text-gray-700 dark:text-gray-200 font-medium">{achievement}</span>
                           </div>
                         ))}
                       </div>
@@ -105,7 +105,7 @@ const Education: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mt-16 text-center"
         >
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
+          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white dark:text-white">
             <h3 className="text-2xl font-bold mb-4">Academic Interests</h3>
             <p className="text-lg mb-6 max-w-3xl mx-auto">
               Currently exploring opportunities for graduate studies in Machine Learning and Artificial Intelligence, 

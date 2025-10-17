@@ -22,7 +22,7 @@ const Blog: React.FC = () => {
   };
 
   return (
-    <section id="blog" className="py-20 bg-white">
+    <section id="blog" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -31,10 +31,10 @@ const Blog: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Latest Articles
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
             Sharing insights on technology, software development, and my journey in computer science
           </p>
           <motion.a
@@ -56,7 +56,7 @@ const Blog: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-3xl font-bold text-center text-gray-900 mb-12"
+            className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12"
           >
             Featured Articles
           </motion.h3>
@@ -68,7 +68,7 @@ const Blog: React.FC = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.4 + index * 0.2 }}
-                className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group"
+                className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group"
               >
                 <div className="relative">
                   <img
@@ -86,7 +86,7 @@ const Blog: React.FC = () => {
                 </div>
                 
                 <div className="p-6">
-                  <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
+                  <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-300 mb-3">
                     <div className="flex items-center gap-1">
                       <Calendar size={14} />
                       <span>{formatDate(post.publishedDate)}</span>
@@ -97,11 +97,11 @@ const Blog: React.FC = () => {
                     </div>
                   </div>
                   
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-200">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 transition-colors duration-200">
                     {post.title}
                   </h3>
                   
-                  <p className="text-gray-700 mb-4 leading-relaxed">
+                  <p className="text-gray-700 dark:text-gray-200 mb-4 leading-relaxed">
                     {post.excerpt}
                   </p>
                   
@@ -109,7 +109,7 @@ const Blog: React.FC = () => {
                     {post.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium"
+                        className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-medium"
                       >
                         {tag}
                       </span>
@@ -139,7 +139,7 @@ const Blog: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-3xl font-bold text-center text-gray-900 mb-12"
+              className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12"
             >
               More Articles
             </motion.h3>
@@ -151,9 +151,9 @@ const Blog: React.FC = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.8, delay: 0.8 + index * 0.1 }}
-                  className="bg-white border border-gray-200 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 group"
+                  className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 group"
                 >
-                  <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
+                  <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-gray-300 mb-3">
                     <div className="flex items-center gap-1">
                       <Calendar size={14} />
                       <span>{formatDate(post.publishedDate)}</span>
@@ -164,11 +164,11 @@ const Blog: React.FC = () => {
                     </div>
                   </div>
                   
-                  <h4 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-200">
+                  <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 transition-colors duration-200">
                     {post.title}
                   </h4>
                   
-                  <p className="text-gray-700 mb-4 text-sm leading-relaxed">
+                  <p className="text-gray-700 dark:text-gray-200 mb-4 text-sm leading-relaxed">
                     {post.excerpt}
                   </p>
                   
@@ -176,13 +176,13 @@ const Blog: React.FC = () => {
                     {post.tags.slice(0, 3).map((tag) => (
                       <span
                         key={tag}
-                        className="bg-gray-100 text-gray-800 px-2 py-1 rounded text-xs font-medium"
+                        className="bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300 px-2 py-1 rounded text-xs font-medium"
                       >
                         {tag}
                       </span>
                     ))}
                     {post.tags.length > 3 && (
-                      <span className="text-gray-500 text-xs">+{post.tags.length - 3} more</span>
+                      <span className="text-gray-500 dark:text-gray-400 text-xs">+{post.tags.length - 3} more</span>
                     )}
                   </div>
                   
@@ -196,10 +196,11 @@ const Blog: React.FC = () => {
                     Read Article
                     <ExternalLink size={14} />
                   </motion.a>
-                </motion.article>
-              ))}
-            </div>
+              
+              </motion.article>
+            ))}
           </div>
+        </div>
         )}
 
         {/* Call to Action */}
@@ -209,7 +210,7 @@ const Blog: React.FC = () => {
           transition={{ duration: 0.8, delay: 1 }}
           className="mt-16 text-center"
         >
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
+          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white dark:text-white">
             <h3 className="text-2xl font-bold mb-4">Want to Read More?</h3>
             <p className="text-lg mb-6 max-w-2xl mx-auto">
               I regularly write about technology, software development, and my experiences in the tech industry. 
@@ -221,7 +222,7 @@ const Blog: React.FC = () => {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300"
+              className="inline-flex items-center gap-2 bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300 dark:text-blue-600 dark:hover:bg-gray-200"
             >
               <BookOpen size={20} />
               Follow @wintersoldie

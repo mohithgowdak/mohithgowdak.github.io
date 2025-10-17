@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -12,10 +12,27 @@ import ChatBot from './components/ChatBot';
 
 function App() {
   const [isChatOpen, setIsChatOpen] = useState(false);
+  const [theme, setTheme] = useState(
+    localStorage.getItem('theme') ||
+      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+  );
+
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+  };
 
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
+    <div className="min-h-screen bg-white dark:bg-gray-900">
+      <Header toggleTheme={toggleTheme} currentTheme={theme} />
       <Hero onChatOpen={() => setIsChatOpen(true)} />
       <About />
       <Experience />

@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Github, Linkedin, Mail, Phone } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Mail, Sun, Moon } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { personalInfo } from '../data/portfolio';
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  toggleTheme: () => void;
+  currentTheme: string;
+}
+
+const Header: React.FC<HeaderProps> = ({ toggleTheme, currentTheme }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -49,7 +54,9 @@ const Header: React.FC = () => {
                 href={item.href}
                 whileHover={{ y: -2 }}
                 className={`transition-colors duration-200 ${
-                  isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-300'
+                  isScrolled
+                    ? 'text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400'
+                    : 'text-white hover:text-blue-300'
                 }`}
               >
                 {item.label}
@@ -57,7 +64,7 @@ const Header: React.FC = () => {
             ))}
           </nav>
 
-          {/* Social Links */}
+          {/* Social Links and Theme Toggle */}
           <div className="hidden md:flex items-center space-x-4">
             <motion.a
               href={personalInfo.github}
@@ -65,7 +72,9 @@ const Header: React.FC = () => {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}
               className={`transition-colors duration-200 ${
-                isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-300'
+                isScrolled
+                  ? 'text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400'
+                  : 'text-white hover:text-blue-300'
               }`}
             >
               <Github size={20} />
@@ -76,7 +85,9 @@ const Header: React.FC = () => {
               rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}
               className={`transition-colors duration-200 ${
-                isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-300'
+                isScrolled
+                  ? 'text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400'
+                  : 'text-white hover:text-blue-300'
               }`}
             >
               <Linkedin size={20} />
@@ -85,22 +96,45 @@ const Header: React.FC = () => {
               href={`mailto:${personalInfo.email}`}
               whileHover={{ scale: 1.1 }}
               className={`transition-colors duration-200 ${
-                isScrolled ? 'text-gray-700 hover:text-blue-600' : 'text-white hover:text-blue-300'
+                isScrolled
+                  ? 'text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400'
+                  : 'text-white hover:text-blue-300'
               }`}
             >
               <Mail size={20} />
             </motion.a>
+            <motion.button
+              onClick={toggleTheme}
+              whileHover={{ scale: 1.1 }}
+              className={`transition-colors duration-200 ${
+                isScrolled
+                  ? 'text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400'
+                  : 'text-white hover:text-blue-300'
+              }`}
+            >
+              {currentTheme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+            </motion.button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className={`md:hidden transition-colors duration-200 ${
-              isScrolled ? 'text-gray-700' : 'text-white'
-            }`}
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* Mobile Menu Button and Theme Toggle */}
+          <div className="md:hidden flex items-center space-x-4">
+            <button
+              onClick={toggleTheme}
+              className={`transition-colors duration-200 ${
+                isScrolled ? 'text-gray-700 dark:text-gray-300' : 'text-white'
+              }`}
+            >
+              {currentTheme === 'dark' ? <Sun size={24} /> : <Moon size={24} />}
+            </button>
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className={`transition-colors duration-200 ${
+                isScrolled ? 'text-gray-700 dark:text-gray-300' : 'text-white'
+              }`}
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
@@ -109,26 +143,26 @@ const Header: React.FC = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden bg-white rounded-lg shadow-lg mt-2 py-4"
+            className="md:hidden bg-white dark:bg-gray-800 rounded-lg shadow-lg mt-2 py-4"
           >
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
-                className="block px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 transition-colors duration-200"
+                className="block px-4 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-blue-400 dark:hover:bg-gray-700 transition-colors duration-200"
               >
                 {item.label}
               </a>
             ))}
-            <div className="flex justify-center space-x-4 mt-4 pt-4 border-t border-gray-200">
-              <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-blue-600">
+            <div className="flex justify-center space-x-4 mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+              <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">
                 <Github size={20} />
               </a>
-              <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-blue-600">
+              <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">
                 <Linkedin size={20} />
               </a>
-              <a href={`mailto:${personalInfo.email}`} className="text-gray-700 hover:text-blue-600">
+              <a href={`mailto:${personalInfo.email}`} className="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">
                 <Mail size={20} />
               </a>
             </div>

@@ -59,7 +59,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-50">
+    <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -68,10 +68,10 @@ const Contact: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Get In Touch
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             I'm always open to discussing new opportunities, collaborations, or just having a chat about technology
           </p>
         </motion.div>
@@ -85,8 +85,8 @@ const Contact: React.FC = () => {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Let's Connect</h3>
-              <p className="text-lg text-gray-700 mb-8">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Let's Connect</h3>
+              <p className="text-lg text-gray-700 dark:text-gray-200 mb-8">
                 Whether you're a recruiter, fellow developer, or someone interested in collaboration, 
                 I'd love to hear from you. Feel free to reach out through any of the channels below.
               </p>
@@ -95,13 +95,13 @@ const Contact: React.FC = () => {
             <div className="space-y-6">
               <motion.div
                 whileHover={{ x: 5 }}
-                className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+                className="flex items-center gap-4 p-4 bg-white dark:bg-gray-700 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
               >
                 <div className="bg-blue-100 p-3 rounded-lg">
                   <Mail className="text-blue-600" size={24} />
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900">Email</p>
+                  <p className="font-semibold text-gray-900 dark:text-white">Email</p>
                   <a href={`mailto:${personalInfo.email}`} className="text-blue-600 hover:text-blue-800 transition-colors duration-200">
                     {personalInfo.email}
                   </a>
@@ -110,13 +110,13 @@ const Contact: React.FC = () => {
 
               <motion.div
                 whileHover={{ x: 5 }}
-                className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+                className="flex items-center gap-4 p-4 bg-white dark:bg-gray-700 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
               >
                 <div className="bg-green-100 p-3 rounded-lg">
                   <Phone className="text-green-600" size={24} />
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900">Phone</p>
+                  <p className="font-semibold text-gray-900 dark:text-white">Phone</p>
                   <a href={`tel:${personalInfo.phone}`} className="text-green-600 hover:text-green-800 transition-colors duration-200">
                     {personalInfo.phone}
                   </a>
@@ -125,13 +125,13 @@ const Contact: React.FC = () => {
 
               <motion.div
                 whileHover={{ x: 5 }}
-                className="flex items-center gap-4 p-4 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+                className="flex items-center gap-4 p-4 bg-white dark:bg-gray-700 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
               >
                 <div className="bg-purple-100 p-3 rounded-lg">
                   <MapPin className="text-purple-600" size={24} />
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900">Location</p>
+                  <p className="font-semibold text-gray-900 dark:text-white">Location</p>
                   <p className="text-purple-600">{personalInfo.location}</p>
                 </div>
               </motion.div>
@@ -144,7 +144,7 @@ const Contact: React.FC = () => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className="bg-gray-900 text-white p-3 rounded-lg hover:bg-gray-800 transition-colors duration-300"
+                className="bg-gray-900 text-white p-3 rounded-lg hover:bg-gray-800 transition-colors duration-300 dark:bg-gray-700 dark:hover:bg-gray-600"
               >
                 <Github size={24} />
               </motion.a>
@@ -166,9 +166,9 @@ const Contact: React.FC = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="bg-white rounded-2xl shadow-xl p-8"
+            className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8"
           >
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Send a Message</h3>
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Send a Message</h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Feedback message */}
@@ -180,7 +180,7 @@ const Contact: React.FC = () => {
               )}
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
                     Name
                   </label>
                   <input
@@ -190,13 +190,13 @@ const Contact: React.FC = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent transition-colors duration-200 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
                     placeholder="Your name"
                   />
                 </div>
                 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
                     Email
                   </label>
                   <input
@@ -206,14 +206,14 @@ const Contact: React.FC = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                    className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent transition-colors duration-200 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
                     placeholder="your.email@example.com"
                   />
                 </div>
               </div>
               
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
                   Subject
                 </label>
                 <input
@@ -223,13 +223,13 @@ const Contact: React.FC = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent transition-colors duration-200 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
                   placeholder="What's this about?"
                 />
               </div>
               
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-2">
                   Message
                 </label>
                 <textarea
@@ -239,7 +239,7 @@ const Contact: React.FC = () => {
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 resize-none"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent transition-colors duration-200 resize-none bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
                   placeholder="Tell me about your project, opportunity, or just say hello!"
                 />
               </div>

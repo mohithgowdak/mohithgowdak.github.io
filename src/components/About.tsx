@@ -34,7 +34,7 @@ const About: React.FC = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gray-50">
+    <section id="about" className="py-20 bg-gray-50 dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -43,10 +43,10 @@ const About: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             About Me
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             A passionate computer science graduate ready to make an impact in the tech industry
           </p>
         </motion.div>
@@ -73,16 +73,16 @@ const About: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="space-y-6"
           >
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
             I’m a Computer Science Engineering graduate (Class of 2025) with hands-on experience across product support, software engineering, and applied tech projects. Currently at SAP Labs, I’m learning how large-scale enterprise systems operate and how to deliver reliable solutions that serve real users.
             </p>
             
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
             Previously at OpenText, I gained exposure to collaborative development and problem solving.
             I'm particularly interested in the intersection of AI and web development, and I'm actively seeking 
               opportunities to contribute to innovative projects while pursuing advanced studies in machine learning.
             </p>
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p className="text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
             Outside of work, I’ve enjoyed experimenting with projects that explore human-computer interaction and real-time systems — blending software, design, and intelligent tech to solve practical challenges. This includes working on gesture-based interfaces, exploring how facial micro-expressions can enhance user responsiveness, and building interactive prototypes that combine lightweight computer vision models with responsive front-end frameworks like React and Firebase. These projects have helped me understand the nuances of real-time data processing, media pipelines, and the design of intelligent systems that are both functional and user-centric.
             </p>
 
@@ -93,11 +93,11 @@ const About: React.FC = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
-                  className="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+                  className="bg-white dark:bg-gray-700 p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
                 >
                   <highlight.icon className="text-blue-600 mb-2" size={24} />
-                  <h4 className="font-semibold text-gray-900 mb-1">{highlight.title}</h4>
-                  <p className="text-sm text-gray-600">{highlight.description}</p>
+                  <h4 className="font-semibold text-gray-900 dark:text-white mb-1">{highlight.title}</h4>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">{highlight.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -111,7 +111,7 @@ const About: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="mt-20"
         >
-          <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">Technical Skills</h3>
+          <h3 className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12">Technical Skills</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {Object.entries(skills).map(([category, skillList], index) => (
               <motion.div
@@ -119,14 +119,14 @@ const About: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 1 + index * 0.1 }}
-                className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
+                className="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
               >
-                <h4 className="font-semibold text-gray-900 mb-4 text-center">{category}</h4>
+                <h4 className="font-semibold text-gray-900 dark:text-white mb-4 text-center">{category}</h4>
                 <div className="flex flex-wrap gap-2">
                   {skillList.map((skill) => (
                     <span
                       key={skill}
-                      className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium"
+                      className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-medium"
                     >
                       {skill}
                     </span>

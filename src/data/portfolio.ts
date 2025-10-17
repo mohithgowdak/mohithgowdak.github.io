@@ -4,6 +4,7 @@ export const personalInfo = {
   name: "Mohith Gowda K",
   title: "Computer Science Graduate",
   email: "mohithgowdak.kote@gmail.com",
+  phone: "+91 98765 43210", // Added phone number
   location: "Bengaluru, Karnataka, India",
   linkedin: "https://linkedin.com/in/mohith-gowda-k",
   github: "https://github.com/mohithgowdak",

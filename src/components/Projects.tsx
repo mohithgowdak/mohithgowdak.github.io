@@ -17,7 +17,7 @@ const Projects: React.FC = () => {
   const otherProjects = projects.filter(project => !project.featured);
 
   return (
-    <section id="projects" className="py-20 bg-gray-50">
+    <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -26,10 +26,10 @@ const Projects: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             Featured Projects
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             A showcase of my technical skills and creative problem-solving abilities
           </p>
         </motion.div>
@@ -60,17 +60,17 @@ const Projects: React.FC = () => {
               <div className={index % 2 === 1 ? 'lg:col-start-1' : ''}>
                 <div className="flex items-center gap-2 mb-4">
                   <Star className="text-yellow-500 fill-current" size={20} />
-                  <span className="text-sm font-medium text-gray-600 uppercase tracking-wide">Featured Project</span>
+                  <span className="text-sm font-medium text-gray-600 dark:text-gray-300 uppercase tracking-wide">Featured Project</span>
                 </div>
                 
-                <h3 className="text-3xl font-bold text-gray-900 mb-4">{project.title}</h3>
-                <p className="text-lg text-gray-700 mb-6 leading-relaxed">{project.description}</p>
+                <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">{project.title}</h3>
+                <p className="text-lg text-gray-700 dark:text-gray-200 mb-6 leading-relaxed">{project.description}</p>
                 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium"
+                      className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-medium"
                     >
                       {tech}
                     </span>
@@ -85,7 +85,7 @@ const Projects: React.FC = () => {
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="flex items-center gap-2 bg-gray-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-300"
+                      className="flex items-center gap-2 bg-gray-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-300 dark:bg-gray-700 dark:hover:bg-gray-600"
                     >
                       <Github size={20} />
                       View Code
@@ -98,7 +98,7 @@ const Projects: React.FC = () => {
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300"
+                      className="flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 dark:bg-blue-700 dark:hover:bg-blue-600"
                     >
                       <ExternalLink size={20} />
                       Live Demo
@@ -117,7 +117,7 @@ const Projects: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-3xl font-bold text-center text-gray-900 mb-12"
+              className="text-3xl font-bold text-center text-gray-900 dark:text-white mb-12"
             >
               Other Notable Projects
             </motion.h3>
@@ -129,7 +129,7 @@ const Projects: React.FC = () => {
                   initial={{ opacity: 0, y: 30 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.8, delay: 0.8 + index * 0.1 }}
-                  className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group cursor-pointer"
+                  className="bg-white dark:bg-gray-700 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden group cursor-pointer"
                   onClick={() => setSelectedProject(project)}
                 >
                   <div className="relative">
@@ -142,20 +142,20 @@ const Projects: React.FC = () => {
                   </div>
                   
                   <div className="p-6">
-                    <h4 className="text-xl font-bold text-gray-900 mb-2">{project.title}</h4>
-                    <p className="text-gray-700 mb-4 line-clamp-3">{project.description}</p>
+                    <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{project.title}</h4>
+                    <p className="text-gray-700 dark:text-gray-200 mb-4 line-clamp-3">{project.description}</p>
                     
                     <div className="flex flex-wrap gap-2 mb-4">
                       {project.technologies.slice(0, 3).map((tech) => (
                         <span
                           key={tech}
-                          className="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm"
+                          className="bg-gray-100 text-gray-800 dark:bg-gray-600 dark:text-gray-200 px-2 py-1 rounded text-sm"
                         >
                           {tech}
                         </span>
                       ))}
                       {project.technologies.length > 3 && (
-                        <span className="text-gray-500 text-sm">+{project.technologies.length - 3} more</span>
+                        <span className="text-gray-500 dark:text-gray-400 text-sm">+{project.technologies.length - 3} more</span>
                       )}
                     </div>
                     
@@ -165,7 +165,7 @@ const Projects: React.FC = () => {
                           href={project.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                          className="text-gray-600 hover:text-gray-900 transition-colors duration-200 dark:text-gray-300 dark:hover:text-white"
                           onClick={e => e.stopPropagation()}
                         >
                           <Github size={20} />
@@ -193,9 +193,9 @@ const Projects: React.FC = () => {
       {/* Modal for project details */}
       {selectedProject && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white rounded-xl shadow-2xl max-w-lg w-full p-8 relative animate-fadeIn">
+          <div className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl max-w-lg w-full p-8 relative animate-fadeIn">
             <button
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-900 text-2xl font-bold"
+              className="absolute top-4 right-4 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white text-2xl font-bold"
               onClick={() => setSelectedProject(null)}
               aria-label="Close"
             >
@@ -206,13 +206,13 @@ const Projects: React.FC = () => {
               alt={selectedProject.title}
               className="w-full h-56 object-cover rounded-lg mb-4"
             />
-            <h3 className="text-2xl font-bold mb-2">{selectedProject.title}</h3>
-            <p className="text-gray-700 mb-4">{selectedProject.description}</p>
+            <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white">{selectedProject.title}</h3>
+            <p className="text-gray-700 dark:text-gray-200 mb-4">{selectedProject.description}</p>
             <div className="flex flex-wrap gap-2 mb-4">
               {selectedProject.technologies.map((tech) => (
                 <span
                   key={tech}
-                  className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium"
+                  className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-medium"
                 >
                   {tech}
                 </span>
@@ -224,7 +224,7 @@ const Projects: React.FC = () => {
                   href={selectedProject.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-gray-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-300"
+                  className="flex items-center gap-2 bg-gray-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-300 dark:bg-gray-700 dark:hover:bg-gray-600"
                 >
                   <Github size={20} />
                   View Code
@@ -235,7 +235,7 @@ const Projects: React.FC = () => {
                   href={selectedProject.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300"
+                  className="flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 dark:bg-blue-700 dark:hover:bg-blue-600"
                 >
                   <ExternalLink size={20} />
                   Live Demo
