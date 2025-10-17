@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Send, MessageCircle, Bot, User } from 'lucide-react';
+import { X, Send, Bot, User } from 'lucide-react';
 import { ChatMessage } from '../types';
-import { personalInfo, projects, experience, education, skills, blogPosts } from '../data/portfolio';
+import axios from 'axios';
 
 interface ChatBotProps {
   isOpen: boolean;
@@ -30,77 +30,6 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onClose }) => {
     scrollToBottom();
   }, [messages]);
 
-  const generateResponse = (userMessage: string): string => {
-    const message = userMessage.toLowerCase();
-    
-    // Blog and writing questions
-    if (message.includes('blog') || message.includes('article') || message.includes('writing') || message.includes('medium')) {
-      const featuredPosts = blogPosts.filter(post => post.featured);
-      const postList = featuredPosts.map(post => 
-        `• "${post.title}" - ${post.excerpt.substring(0, 80)}...`
-      ).join('\n');
-      return `Mohith  regularly writes on Medium (@wintersoldie) about technology and software development. Here are some of his featured articles:\n\n${postList}\n\nYou can read all his articles at: ${personalInfo.medium}`;
-    }
-    
-    // Skills and technical questions
-    if (message.includes('skill') || message.includes('technology') || message.includes('programming')) {
-      const skillCategories = Object.entries(skills).map(([category, skillList]) => 
-        `${category}: ${skillList.join(', ')}`
-      ).join('\n\n');
-      return `Mohith  has expertise in various technologies:\n\n${skillCategories}\n\nHe's particularly strong in full-stack development and machine learning!`;
-    }
-    
-    // Projects
-    if (message.includes('project')) {
-      const projectList = projects.map(p => 
-        `• ${p.title}: ${p.description.substring(0, 100)}...`
-      ).join('\n');
-      return `Here are Mohith 's key projects:\n\n${projectList}\n\n`;
-    }
-    
-    // Experience
-    if (message.includes('experience') || message.includes('work') || message.includes('job')) {
-      const expList = experience.map(exp => 
-        `• ${exp.title} at ${exp.company} (${exp.duration})`
-      ).join('\n');
-      return `Mohith 's professional experience includes:\n\n${expList}\n\nHe has hands-on experience in software development and research.`;
-    }
-    
-    // Education
-    if (message.includes('education') || message.includes('university') || message.includes('degree')) {
-      const edu = education[0];
-      return `Mohith  graduated ${edu.degree} from ${edu.institution} (${edu.duration}) with a ${edu.gpa} GPA. His achievements include: ${edu.achievements.join(', ')}.`;
-    }
-    
-    // Contact information
-    if (message.includes('contact') || message.includes('email') || message.includes('phone')) {
-      return `You can reach Mohith  at:\n• Email: ${personalInfo.email}\n• Phone: ${personalInfo.phone}\n• Location: ${personalInfo.location}\n• LinkedIn: ${personalInfo.linkedin}\n• GitHub: ${personalInfo.github}\n• Medium: ${personalInfo.medium}`;
-    }
-    
-    // Background/About
-    if (message.includes('about') || message.includes('background') || message.includes('who')) {
-      return `${personalInfo.summary}\n\nMohith  is a ${personalInfo.title} based in ${personalInfo.location}. He's passionate about technology and always eager to take on new challenges!`;
-    }
-    
-    // Graduate school/MS applications
-    if (message.includes('graduate') || message.includes('masters') || message.includes('ms ') || message.includes('phd')) {
-      return `Mohith  is actively seeking opportunities for graduate studies in Machine Learning and AI. He's particularly interested in natural language processing and computer vision. His strong academic background  and research experience make him a great candidate for advanced studies.`;
-    }
-    
-    // Availability/hiring
-    if (message.includes('available') || message.includes('hire') || message.includes('position')) {
-      return `Yes! Mohith  is actively seeking new opportunities in software development, particularly roles involving full-stack development, AI/ML, or research positions. He's also open to graduate school opportunities. Feel free to reach out to discuss potential collaborations!`;
-    }
-    
-    // Default responses for common greetings
-    if (message.includes('hello') || message.includes('hi ') || message.includes('hey')) {
-      return `Hello! I'm here to help you learn more about Mohith. You can ask me about his skills, projects, experience, education, blog posts, or how to contact him. What interests you most?`;
-    }
-    
-    // Default fallback
-    return `I'd be happy to help you learn more about Mohith ! You can ask me about:\n\n• His technical skills and programming languages\n• His projects and portfolio\n• His work experience and internships\n• His education and achievements\n• His blog posts and articles on Medium\n• How to contact him\n• His availability for new opportunities\n\nWhat would you like to know?`;
-  };
-
   const handleSendMessage = async () => {
     if (!inputValue.trim()) return;
 
@@ -115,19 +44,27 @@ const ChatBot: React.FC<ChatBotProps> = ({ isOpen, onClose }) => {
     setInputValue('');
     setIsTyping(true);
 
-    // Simulate typing delay
-    setTimeout(() => {
-      const response = generateResponse(inputValue);
+    try {
+      const response = await axios.post('/api/chat', { message: inputValue });
       const botMessage: ChatMessage = {
         id: (Date.now() + 1).toString(),
-        content: response,
+        content: response.data.reply,
         isUser: false,
         timestamp: new Date()
       };
-
       setMessages(prev => [...prev, botMessage]);
+    } catch (error) {
+      console.error('Error fetching response from chatbot server:', error);
+      const errorMessage: ChatMessage = {
+        id: (Date.now() + 1).toString(),
+        content: "Sorry, I'm having trouble connecting to my brain right now. Please try again later.",
+        isUser: false,
+        timestamp: new Date()
+      };
+      setMessages(prev => [...prev, errorMessage]);
+    } finally {
       setIsTyping(false);
-    }, 1000 + Math.random() * 1000);
+    }
   };
 
   const handleKeyPress = (e: React.KeyboardEvent) => {
