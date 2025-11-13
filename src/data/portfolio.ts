@@ -82,7 +82,35 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/mohithgowdak/NewNotesSharing", // Replace with your real GitHub link
     liveUrl: "", // Add live deployment link if available
     featured: false
+  },
+  {
+    "id": "8",
+    "title": "MCP GitHub Project Manager",
+    "description": "A comprehensive Model Context Protocol (MCP) server built in Python that provides advanced GitHub project management capabilities through GitHub's GraphQL API. Implements 47+ MCP tools for managing projects, issues, milestones, sprints, labels, comments, custom fields, and advanced search/filtering. Built with Clean Architecture principles, featuring async/await patterns, comprehensive error handling with retry mechanisms, in-memory caching with TTL support, and an event system for tracking resource changes. Enables seamless integration with AI assistants like Cursor, Claude Desktop, and VS Code for automated project management workflows.",
+    "technologies": [
+      "Python",
+      "Model Context Protocol (MCP)",
+      "GitHub GraphQL API",
+      "Pydantic",
+      "PyGithub",
+      "httpx",
+      "aiohttp",
+      "Click",
+      "Python-dotenv",
+      "Async/Await",
+      "Clean Architecture",
+      "Type Hints",
+      "Pytest",
+      "Black",
+      "Ruff",
+      "MyPy"
+    ],
+    "imageUrl": "/Images/mcp_git.png",
+    "githubUrl": "https://github.com/mohithgowdak/git_proj_manger_mcp",
+    "featured": true
   }
+  
+  
   
     
 ];
