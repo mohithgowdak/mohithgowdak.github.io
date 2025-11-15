@@ -107,6 +107,7 @@ export const projects: Project[] = [
     ],
     "imageUrl": "/Images/mcp_git.png",
     "githubUrl": "https://github.com/mohithgowdak/git_proj_manger_mcp",
+    liveUrl: "https://www.linkedin.com/pulse/building-mcp-server-github-project-management-journey-mohith-gowda-k-2lvgc/?trackingId=bqJuzvFRQm6WC0tIGAMMhg%3D%3D",
     "featured": true
   }
   
