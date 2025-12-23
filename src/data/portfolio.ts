@@ -15,7 +15,7 @@ export const personalInfo = {
 export const projects: Project[] = [
   {
     id: "1",
-    title: "Micro-Expression Recognition based on TV-L1 based Hierarchical Transformer Network",
+    title: "Micro-Expression Recognition based on TV-L1 based Hierarchical Transformer Network - [paper Accepted at Hinweis Journal]",
     description: "Aimed to explore the application of Hierarchical Transformer Networks (HTNet) in micro-expression recognition by combining TV-L1 optical flow for extracting subtle facial motion dynamics with HTNet for deep spatial-temporal feature learning. Achieved a UF1 score of 0.9722 and ECE of 0.1131 on CASME II, SAMM, and SMIC datasets. Enabled real-time, high-accuracy emotion recognition for use cases in security, mental health diagnostics, and human-computer interaction.",
     technologies: ["Python", "PyTorch", "OpenCV", "MediaPipe", "MTCNN", "NumPy", "Matplotlib", "TV-L1 Optical Flow Algorithm", "Hierarchical Transformer Network (HTNet)"],
     imageUrl: "/Images/microexpression.jpg",
