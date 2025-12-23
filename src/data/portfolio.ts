@@ -20,7 +20,7 @@ export const projects: Project[] = [
     technologies: ["Python", "PyTorch", "OpenCV", "MediaPipe", "MTCNN", "NumPy", "Matplotlib", "TV-L1 Optical Flow Algorithm", "Hierarchical Transformer Network (HTNet)"],
     imageUrl: "/Images/microexpression.jpg",
     //githubUrl: "https://github.com/Mohith johnson/ecommerce-platform",
-    //liveUrl: "https://ecommerce-demo.vercel.app",
+    liveUrl: "https://drive.google.com/file/d/1KqvCfOpeKvzf-tBU5VjrbpQSXQsMgMBz/view?usp=sharing",
     featured: true
   },
   {
@@ -246,7 +246,8 @@ export const skills = {
     "MCP Server",
     "Prompt Tuning and Engineering",
     "LLMs (Large Language Models)",
-    "Generative AI"
+    "Generative AI",
+    "MCP Server"
   ],
   "Tools & Platforms": [
     "Git",
@@ -278,5 +279,17 @@ export const skills = {
     "Technical Communication",
     "Adaptability",
     "Time Management"
+  ],
+  "concepts": [
+    "DSA - Arrays, Strings, Linked Lists, Trees, Graphs, Hashing, Sorting, Searching, Backtracking, Greedy, etc.",
+    "DBMS - Relational Database Management System, Normalization, Transactions, Concurrency Control, Indexing, Query Optimization, etc.",
+    "Machine Learning - Supervised Learning, Unsupervised Learning, Reinforcement Learning, Deep Learning, Neural Networks, etc.",
+    "Computer Networks - OSI Model, TCP/IP Model, Routing, Switching, Protocols, etc.",
+    "Data Science - Data Cleaning, Data Preprocessing, Data Visualization, Data Analysis, etc.",
+    "Deep Learning - Neural Networks, Convolutional Neural Networks, Recurrent Neural Networks, Transformers, etc.",
+    "Image Processing - Image Enhancement, Image Segmentation, Object Detection, Image Classification, etc.",
+    "Object Oriented Programming - Classes, Objects, Inheritance, Polymorphism, Encapsulation, Abstraction, etc.",
+    "Software Engineering - Agile Methodologies, Design Patterns, Software Architecture, Testing, Debugging, etc.",
+    "Web Development - HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, MySQL, etc.",
   ]
 };

@@ -80,7 +80,7 @@ const Hero: React.FC<HeroProps> = ({ onChatOpen }) => {
             transition={{ duration: 0.8, delay: 0.8 }}
           >
             <motion.a
-              href="https://drive.google.com/file/d/1xPCIhzZFepOxsnu7TN4Zuu77WoMQaqya/view?usp=drive_link"
+              href="https://drive.google.com/file/d/1C5-KYjvaLt2K2QyoCyn0vaBdyhchxqcF/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{ scale: 1.05 }}
