@@ -285,11 +285,9 @@ export const skills = {
     "DBMS - Relational Database Management System, Normalization, Transactions, Concurrency Control, Indexing, Query Optimization, etc.",
     "Machine Learning - Supervised Learning, Unsupervised Learning, Reinforcement Learning, Deep Learning, Neural Networks, etc.",
     "Computer Networks - OSI Model, TCP/IP Model, Routing, Switching, Protocols, etc.",
-    "Data Science - Data Cleaning, Data Preprocessing, Data Visualization, Data Analysis, etc.",
     "Deep Learning - Neural Networks, Convolutional Neural Networks, Recurrent Neural Networks, Transformers, etc.",
     "Image Processing - Image Enhancement, Image Segmentation, Object Detection, Image Classification, etc.",
-    "Object Oriented Programming - Classes, Objects, Inheritance, Polymorphism, Encapsulation, Abstraction, etc.",
     "Software Engineering - Agile Methodologies, Design Patterns, Software Architecture, Testing, Debugging, etc.",
-    "Web Development - HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, MySQL, etc.",
+    "Object Oriented Programming - Classes, Objects, Inheritance, Polymorphism, Encapsulation, Abstraction, etc."
   ]
 };
