@@ -2,7 +2,7 @@ import { Project, Experience, Education, BlogPost } from '../types';
 
 export const personalInfo = {
   name: "Mohith Gowda K",
-  title: "Computer Science Graduate",
+  title: "AI/ML Engineer and Data Scientist",
   email: "mohithgowdak.kote@gmail.com",
   phone: "+91 8050251260", // Added phone number
   location: "Bengaluru, Karnataka, India",
